@@ -49,19 +49,17 @@ for (let index = 0; index < tip.length; index++) {
     
 }
 
-tipEnd.addEventListener("keypress", function(event) {
+tipEnd.addEventListener("input", function(event) {
     for (let r = 0; r < tip.length; r++) {
         if(tip[r].classList.contains("active")){
             tip[r].classList.remove("active");
         }
     }
 
-    if (event.key == "Enter") {
-        let totalTipAmount = (parseInt(this.value) / 100) * bill.value;
-        let totalPerson = totalTipAmount * people.value;
-        tipAmount.innerText = totalTipAmount.toFixed(2);
-        total.innerText = totalPerson.toFixed(2);
-    }
+    let totalTipAmount = (parseInt(this.value) / 100) * bill.value;
+    let totalPerson = totalTipAmount * people.value;
+    tipAmount.innerText = totalTipAmount.toFixed(2);
+    total.innerText = totalPerson.toFixed(2);
 });
 
 function sliced (val) {
