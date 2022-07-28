@@ -258,3 +258,13 @@ label[for="percentage"], .people {
         font-size: 14px;
     }
 }
+
+@media only screen and (max-width: 320px) {
+    #person, #zero {
+        font-size: 12px;
+    }
+    
+    .people {
+        margin-bottom: 10px;
+    }
+}
