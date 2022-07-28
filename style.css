@@ -1,0 +1,260 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--light-grayish-cyan);
+    overflow: hidden;
+}
+
+main {
+    width: 70%;
+    background-color: var(--white);
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main section {
+    width: 48%;
+}
+
+.results {
+    background-color: var(--very-dark-cyan);
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calc {
+    padding: 10px;
+}
+
+#calculator label, #bill {
+    display: block;
+    color: var(--dark-grayish-cyan);
+}
+
+#bill, #people {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--very-light-grayish-cyan);
+    border: none;
+    text-align: right;
+    font-size: 24px;
+    color: var(--very-dark-cyan);
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+    cursor: pointer;
+}
+
+#bill {
+    background-image: url(images/icon-dollar.svg);
+}
+
+#people {
+    background-image: url(images/icon-person.svg);
+}
+
+#bill:focus-visible, .tipEnd:focus-visible, #people:focus-visible {
+    outline: var(--strong-cyan) solid 2px;
+}
+
+#bill::placeholder, #people::placeholder {
+    color: var(--light-grayish-cyan);
+}
+
+.tips {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tips input {
+    width: 30%;
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+label[for="percentage"], .people {
+    margin-top: 20px;
+}
+
+.people {
+    display: flex;
+    color: var(--dark-grayish-cyan);
+}
+
+.people div {
+    width: 50%;
+}
+
+#zero, #zeroBill {
+    text-align: right;
+    color: red;
+}
+
+.activeZero {
+    display: none;
+}
+
+.tip {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tip:hover {
+    background-color: var(--strong-cyan);
+}
+
+.tipEnd {
+    background-color: var(--very-light-grayish-cyan);
+    border: none;
+    text-align: right;
+    border-radius: 5px;
+    color: var(--very-dark-cyan);
+    cursor: pointer;
+}
+
+.tipEnd::placeholder {
+    text-align: center;
+    color: var(--dark-grayish-cyan);
+}
+
+.active {
+    background-color: var(--strong-cyan);
+}
+
+.tipPerson p {
+    margin: 0px;
+    color: var(--light-grayish-cyan);
+}
+
+.tipPerson h4 {
+    margin: 0px;
+    color: var(--white);
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.tipPerson, .tipResult {
+    width: 50%;
+}
+
+.tipResult {
+    text-align: right;
+}
+
+.tipResult h1 {
+    font-size: 32px;
+    margin: 0px;
+    align-items: center;
+    color: var(--strong-cyan);
+}
+
+.result:last-of-type {
+    margin-top: 20px;
+}
+
+.reset {
+    margin-top: 40px;
+}
+
+.reset button {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    background-color: var(--strong-cyan);
+    border: none;
+    font-size: 24px;
+    color: var(--very-dark-cyan);
+    padding: 6px;
+    cursor: pointer;
+    opacity: 0.2;
+}
+
+.reset button:hover {
+    background-color: var(--very-light-grayish-cyan);
+}
+
+@media only screen and (max-width: 768px) {
+    main {
+        width: 100%;
+        margin-top: 25px;
+        flex-direction: column;
+    }
+
+    main section {
+        width: 100%;
+    }
+
+    body {
+        overflow: auto;
+        justify-content: initial;
+        height: auto;
+        margin: 0px;
+    }
+
+    .logo {
+        margin-top: 25px;
+    }
+
+    .tips input {
+        width: 48%;
+    }
+
+    .tipPerson h4 {
+        font-size: 14px;
+    }
+
+    .tipPerson p {
+        font-size: 12px;
+    }
+
+    .results {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .tipResult h1 {
+        font-size: 24px;
+    }
+
+    .result:nth-of-type(2) {
+        margin-top: 20px;
+    }
+
+    .reset button {
+        font-size: 14px;
+    }
+}

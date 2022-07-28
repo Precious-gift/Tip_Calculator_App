@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <head>
+        <div class="logo"><img src="images/logo.svg" alt="logo"></div>
+    </head>
+    <main>
+        <section class="calc">
+            <div id="calculator">
+                <!-- <label for="bill">Bill</label> -->
+                <div class="people">
+                    <div id="person">Bill</div>
+                    <div id="zeroBill" class="activeZero">Can't be zero</div>
+                </div>
+                <input type="number" id="bill" placeholder="0" required>
+                <label for="percentage">Select Tip %</label>
+                <div class="tips">
+                    <input type="button" name="" id="" value="5%" class="tip">
+                    <input type="button" name="" id="" value="10%" class="tip">
+                    <input type="button" name="" id="" value="15%" class="tip">
+                    <input type="button" name="" id="" value="25%" class="tip">
+                    <input type="button" value="50%" class="tip">
+                    <input type="number" class="tipEnd" placeholder="Custom">
+                </div>
+                <div class="people">
+                    <div id="person">Number Of People</div>
+                    <div id="zero" class="activeZero">Can't be zero</div>
+                </div>
+                <input type="number" id="people" placeholder="0" required>
+            </div>
+        </section>
+        <section class="results">
+            <div class="result">
+                <div class="tipPerson">
+                    <h4>Tip Amount</h4>
+                    <p>/ person</p>
+                </div>
+                <div class="tipResult">
+                    <h1>$<span id="tipAmount">0.00</span></h1>
+                </div>
+            </div>
+            <div class="result">
+                <div class="tipPerson">
+                    <h4>Total</h4>
+                    <p>/ person</p>
+                </div>
+                <div class="tipResult">
+                    <h1>$<span id="total">0.00</span></h1>
+                </div>
+            </div>
+            <div class="reset">
+                <button id="reset">RESET</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
